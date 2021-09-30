@@ -14,11 +14,28 @@
     <script defer src="index.js"></script>
 </head>
 <body>
-<img src="background.png" alt="Abstract background image" style="z-index: 100">
+    <img src="background.png" alt="Abstract background image" class="backgroundImage">
     <h1>IP Address Tracker</h1>
     <input type="search">
     <button>></button>
-
-
+    <div class="containerDetails">
+        <div class="containerDetailsCell">
+            <h4>IP ADDRESS</h4>
+            <h2 id="ipAddress"></h2>
+        </div>
+        <div class="containerDetailsCell">
+            <h4>LOCATION</h4>
+            <h2 id="location"></h2>
+        </div>
+        <div class="containerDetailsCell">
+            <h4>TIME ZONE</h4>
+            <h2 id="timeZone"></h2>
+        </div>
+        <div class="containerDetailsCell">
+            <h4>ISP</h4>
+            <h2 id="isp"></h2>
+        </div>
+    </div>
+    <div id="map"></div>
 </body>
 </html>

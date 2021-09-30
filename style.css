@@ -1,0 +1,8 @@
+.backgroundImage {
+    z-index: 100;
+}
+
+#map {
+    width: 360px;
+    height: 640px;
+}
