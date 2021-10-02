@@ -1,8 +1,60 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .backgroundImage {
-    z-index: 100;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #fff;
+}
+
+.searchBar {
+    display: flex;
+    width: 33vw;
+}
+
+.searchInput {
+    width: 90%;
+    height: 5vh;
+}
+
+.searchButton {
+    width: 10%;
+    height: 5vh;
+    border-radius: 2px;
+    background-color: #000;
+    color: #fff;
+}
+
+.containerDetails {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+    position: absolute;
+    top: 135px;
+    z-index: 10;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.containerDetailsCell {
+    border: 2px solid red;
 }
 
 #map {
-    width: 360px;
-    height: 640px;
+    width: 100vw;
+    height: 68vh;
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
 }

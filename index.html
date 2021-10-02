@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>IP Address Tracker | by Genadi Kozarev</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin=""/>
@@ -16,24 +16,26 @@
 <body>
     <img src="background.png" alt="Abstract background image" class="backgroundImage">
     <h1>IP Address Tracker</h1>
-    <input type="search">
-    <button>></button>
+    <div class="searchBar">
+        <input type="search" placeholder="Search for any IP address or domain" class="searchInput">
+        <button class="searchButton">></button>
+    </div>
     <div class="containerDetails">
         <div class="containerDetailsCell">
             <h4>IP ADDRESS</h4>
-            <h2 id="ipAddress"></h2>
+            <h2 id="ipAddress">texttexttext</h2>
         </div>
-        <div class="containerDetailsCell">
+        <div class="containerDetailsCell location">
             <h4>LOCATION</h4>
-            <h2 id="location"></h2>
+            <h2 id="location">texttexttext</h2>
         </div>
-        <div class="containerDetailsCell">
+        <div class="containerDetailsCell timezone">
             <h4>TIME ZONE</h4>
-            <h2 id="timeZone"></h2>
+            <h2 id="timeZone">texttexttext</h2>
         </div>
-        <div class="containerDetailsCell">
+        <div class="containerDetailsCell isp">
             <h4>ISP</h4>
-            <h2 id="isp"></h2>
+            <h2 id="isp">texttexttext</h2>
         </div>
     </div>
     <div id="map"></div>
