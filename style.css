@@ -1,11 +1,12 @@
 body {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: red;
 }
 
 .backgroundImage {
-    position: absolute;
     z-index: -1;
     width: 100%;
     height: auto;
@@ -41,7 +42,7 @@ h1 {
     align-content: center;
     width: 80%;
     position: absolute;
-    top: 135px;
+    top: 200px
     z-index: 10;
     border-radius: 10px;
     padding: 20px;
@@ -54,7 +55,6 @@ h1 {
 #map {
     width: 100vw;
     height: 68vh;
-    position: absolute;
-    bottom: 0;
+    float: bottom;
     z-index: 5;
 }
