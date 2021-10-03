@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
@@ -18,25 +21,25 @@
     <img src="background.png" alt="Abstract background image" class="backgroundImage">
     <h1>IP Address Tracker</h1>
     <div class="searchBar">
-        <input type="search" placeholder="Search for any IP address or domain" class="searchInput">
+        <input type="search" placeholder="Search for any IP address" class="searchInput" maxlength="255">
         <button class="searchButton">></button>
     </div>
     <div class="containerDetails">
-        <div class="containerDetailsCell">
+        <div class="containerDetailsCell ipAddress">
             <h4>IP ADDRESS</h4>
             <h2 id="ipAddress"></h2>
         </div>
         <div class="containerDetailsCell location">
             <h4>LOCATION</h4>
-            <h2 id="location">texttexttext</h2>
+            <h2 id="location"></h2>
         </div>
         <div class="containerDetailsCell timezone">
             <h4>TIME ZONE</h4>
-            <h2 id="timeZone">texttexttext</h2>
+            <h2 id="timezone"></h2>
         </div>
         <div class="containerDetailsCell isp">
             <h4>ISP</h4>
-            <h2 id="isp">texttexttext</h2>
+            <h2 id="isp"></h2>
         </div>
     </div>
     <div id="map"></div>

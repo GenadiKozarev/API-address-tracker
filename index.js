@@ -9,15 +9,37 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiY3liZXJ3b21iYXQiLCJhIjoiY2t1N2hsMHJvMHJxbDJ5cGF4YzRlMmlvMiJ9.g9RBKwBgBC78nWOWb0YkEg'
 }).addTo(mymap);
 
-
+document.querySelector('div.containerDetails').style.display = 'none'
 
 document.querySelector('.searchButton').addEventListener('click', () => {
-    fetch('https://geo.ipify.org/api/v1?apiKey=at_ja6PEtd9151gqzbREsvcDw4NV7JQr')
+    let ipInput = document.querySelector('input.searchInput').value
+    fetch('https://geo.ipify.org/api/v1?apiKey=at_ja6PEtd9151gqzbREsvcDw4NV7JQr&ipAddress=' + ipInput + '')
         .then(data => {
             return data.json()
         }).then(jsonData => {
             console.log(jsonData)
-        document.querySelector('h2#ipAddress').textContent = jsonData.ip
 
+        // let lat = jsonData.location.lat
+        // let lng = jsonData.location.lng
+        let mymap = L.map('map').setView([jsonData.location.lat, jsonData.location.lng], 13)
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoiY3liZXJ3b21iYXQiLCJhIjoiY2t1N2hsMHJvMHJxbDJ5cGF4YzRlMmlvMiJ9.g9RBKwBgBC78nWOWb0YkEg'
+        }).addTo(mymap);
+
+        document.querySelector('h2#ipAddress').textContent = jsonData.ip
+        let postalCode = jsonData.location.postalCode
+        if (postalCode === '') {
+            document.querySelector('h2#location').textContent = jsonData.location.city + ', ' + jsonData.location.region + ' ' + jsonData.location.country
+        } else {
+            document.querySelector('h2#location').textContent = jsonData.location.city + ', ' + jsonData.location.region + ' ' + jsonData.location.postalCode
+        }
+        document.querySelector('h2#timezone').textContent = 'UTC ' + jsonData.location.timezone
+        document.querySelector('h2#isp').textContent = jsonData.isp
     })
+    document.querySelector('div.containerDetails').style.display = 'flex'
 })
